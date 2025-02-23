@@ -1,0 +1,17 @@
+{'status': {'timestamp': '2025-02-23T03: 44: 38.924Z', 'error_code': 0, 'error_message': None, 'elapsed': 24, 'credit_count': 1, 'notice': None
+    }, 'data': {'5354': {'id': 5354, 'name': 'PEAKDEFI', 'symbol': 'PEAK', 'slug': 'peakdefi', 'num_market_pairs': 32, 'date_added': '2020-03-23T00: 00: 00.000Z', 'tags': [
+                {'slug': 'defi', 'name': 'DeFi', 'category': 'CATEGORY'
+                },
+                {'slug': 'ethereum-ecosystem', 'name': 'Ethereum Ecosystem', 'category': 'PLATFORM'
+                },
+                {'slug': 'launchpad', 'name': 'Launchpad', 'category': 'CATEGORY'
+                },
+                {'slug': 'bnb-chain-ecosystem', 'name': 'BNB Chain Ecosystem', 'category': 'PLATFORM'
+                }
+            ], 'max_supply': 2206221151.949727, 'circulating_supply': 1657740019.2436862, 'total_supply': 2206221151.949727, 'platform': {'id': 1027, 'name': 'Ethereum', 'symbol': 'ETH', 'slug': 'ethereum', 'token_address': '0x630d98424efe0ea27fb1b3ab7741907dffeaad78'
+            }, 'is_active': 1, 'infinite_supply': False, 'cmc_rank': 2268, 'is_fiat': 0, 'self_reported_circulating_supply': None, 'self_reported_market_cap': None, 'tvl_ratio': 4.25028857, 'last_updated': '2025-02-23T03: 42: 00.000Z', 'quote': {'USD': {'price': 0.0002837318681461487, 'volume_24h': 2656.50756865, 'volume_change_24h': 991.1962, 'percent_change_1h': 0.03922123, 'percent_change_24h': -20.82003098, 'percent_change_7d': -18.35943609, 'percent_change_30d': -19.59139244, 'percent_change_60d': -27.129227, 'percent_change_90d': -27.30298518, 'market_cap': 470353.6725606435, 'market_cap_dominance': 0, 'fully_diluted_market_cap': 625975.25, 'tvl': 110663.93781, 'last_updated': '2025-02-23T03: 42: 00.000Z'
+                }
+            }
+        }
+    }
+}
