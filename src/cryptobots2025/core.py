@@ -18,14 +18,12 @@ client = RESTClient(api_key=coinbase_api_key, api_secret=coinbase_api_secret)
 
 product = client.get_product_book("BTC-USD", limit=10)
 
-# Extract the main components
-bids = product.get('bids', [])
-asks = product.get('asks', [])
-sequence = product.get('sequence')
+pricebook = product.pricebook
 
+bids = pricebook.bids
+asks = pricebook.asks
 print(bids)
 print(asks)
-print(sequence)
 
 # with open("../../data/product.json", 'w') as file:
     
