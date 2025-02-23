@@ -16,10 +16,19 @@ coinbase_api_secret=os.getenv('COINBASE_API_SECRET')
 
 client = RESTClient(api_key=coinbase_api_key, api_secret=coinbase_api_secret)
 
-product = client.get_product_book("BTC-USD")
+product = client.get_product_book("BTC-USD", limit=10)
 
-with open("../../data/product.json", 'w') as file:
-    json.dump(product, file, indent=4)
+# Extract the main components
+bids = product.get('bids', [])
+asks = product.get('asks', [])
+sequence = product.get('sequence')
+
+print(bids)
+print(asks)
+print(sequence)
+
+# with open("../../data/product.json", 'w') as file:
+    
     
 # coinmarketcap stuff
 # Get API key
