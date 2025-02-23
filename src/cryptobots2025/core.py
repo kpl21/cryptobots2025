@@ -11,17 +11,30 @@ from coinbase.rest import RESTClient
 load_dotenv()
 
 #coinbase stuff
-coinbase_api_key = os.getenv('COINBASE_API_KEY')
-coinbase_api_secret=os.getenv('COINBASE_API_SECRET')
+# coinbase_api_key = os.getenv('COINBASE_API_KEY')
+# coinbase_api_secret=os.getenv('COINBASE_API_SECRET')
 
-client = RESTClient(api_key=coinbase_api_key, api_secret=coinbase_api_secret)
+# client = RESTClient(api_key=coinbase_api_key, api_secret=coinbase_api_secret)
 
-accounts = client.get_accounts()
-data = (dumps(accounts.to_dict(), indent=2))
+# accounts = client.get_accounts()
+# data = (dumps(accounts.to_dict(), indent=2))
 
-with open("../../data/accounts.json", 'w') as file:
-    json.dump(data, file, indent=4)
+# with open("../../data/accounts.json", 'w') as file:
+#     json.dump(data, file, indent=4)
 
+
+import http.client
+import json
+
+conn = http.client.HTTPSConnection("api.coinbase.com")
+payload = ''
+headers = {
+  'Content-Type': 'application/json'
+}
+conn.request("GET", "/api/v3/brokerage/orders/historical/batch?product_ids=SOL-USD", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))
 
 # coinmarketcap stuff
 # Get API key
