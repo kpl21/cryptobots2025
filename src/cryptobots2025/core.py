@@ -12,7 +12,7 @@ api_key = os.getenv('API_KEY')
 
 url = 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest'
 parameters = {
-  'id':'5354',
+  'slug':'solana',
 
 }
 headers = {
@@ -26,6 +26,6 @@ session.headers.update(headers)
 try:
   response = session.get(url, params=parameters)
   data = json.loads(response.text)
-  print(data)
+  print(data['quote'])
 except (ConnectionError, Timeout, TooManyRedirects) as e:
   print(e)
