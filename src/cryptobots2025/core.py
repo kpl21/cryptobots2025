@@ -26,6 +26,6 @@ session.headers.update(headers)
 try:
   response = session.get(url, params=parameters)
   data = json.loads(response.text)
-  print(data['data']['5426']['platform']['quote'])
+  print(data['data']['5426']['quote'])
 except (ConnectionError, Timeout, TooManyRedirects) as e:
   print(e)
