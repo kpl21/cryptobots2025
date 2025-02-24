@@ -40,7 +40,7 @@ asks_orders = [
                 price=ask['price'],
                 size=ask['size'],
                 side='bid',
-                timestamp=time.time()ord
+                timestamp=time.time()
             )
             for ask in asks
         ]
