@@ -1,10 +1,5 @@
-from requests import Request, Session
-from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
-import json
 import os
 from dotenv import load_dotenv
-from json import dumps
-import pandas as pd
 
 from coinbase.rest import RESTClient
 
