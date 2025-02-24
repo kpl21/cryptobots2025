@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import time
-import order
+from order import Order
 from coinbase.rest import RESTClient
 
 # Load environment variables from .env file
@@ -13,7 +13,7 @@ coinbase_api_secret=os.getenv('COINBASE_API_SECRET')
 
 client = RESTClient(api_key=coinbase_api_key, api_secret=coinbase_api_secret)
 
-product = client.get_product_book("SOL-USD", limit=100)
+product = client.get_product_book("SOL-USD", limit=5)
 
 pricebook = product.pricebook
 
@@ -22,7 +22,7 @@ asks = pricebook.asks # list of dictionaries
 # print(bids)
 # print(asks)
 bids_orders = [
-            order.Order(
+            Order(
                 price=bid['price'],
                 size=bid['size'],
                 side='bid',
@@ -31,7 +31,7 @@ bids_orders = [
             for bid in bids
         ]
 asks_orders = [
-            order.Order(
+            Order(
                 price=ask['price'],
                 size=ask['size'],
                 side='bid',
@@ -40,6 +40,6 @@ asks_orders = [
             for ask in asks
         ]
 
-print(bids_orders)
-print(asks_orders)
+print(bids_orders.sort(key=lambda x: x.price, reverse=True)) # Highest buy prices first
+print(asks_orders.sort(key=lambda x: x.price)) # Lowest sell prices first
 
