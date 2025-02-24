@@ -1,14 +1,8 @@
 import os
 from dotenv import load_dotenv
 import time
-
+import order
 from coinbase.rest import RESTClient
-
-class Order:
-    price: float
-    size: float
-    side: str  # 'bid' or 'ask'
-    timestamp: float = None
 
 # Load environment variables from .env file
 load_dotenv()
@@ -28,7 +22,7 @@ asks = pricebook.asks # list of dictionaries
 # print(bids)
 # print(asks)
 bids_orders = [
-            Order(
+            order.Order(
                 price=bid['price'],
                 size=bid['size'],
                 side='bid',
@@ -37,7 +31,7 @@ bids_orders = [
             for bid in bids
         ]
 asks_orders = [
-            Order(
+            order.Order(
                 price=ask['price'],
                 size=ask['size'],
                 side='bid',
