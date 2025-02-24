@@ -51,7 +51,7 @@ for order in asks_orders:
     print("\033[32m" + str(order) + "\033[0m")
 
 
-csv_file = '../../data/.csv'
+csv_file = '../../data/orderbook.csv'
 
 with open(csv_file, 'w', newline='') as file:
     writer = csv.writer(file)
