@@ -56,7 +56,6 @@ csv_file = '../../data/orderbook.csv'
 with open(csv_file, 'w', newline='') as file:
     writer = csv.writer(file)
     for order in bids_orders:
-        writer.writerow(str(order.side) + ',' + str(order.price) + ',' + str(order.size) + ',' + str(order.timestamp))
+        writer.writerow([order.side, order.price, order.size, order.timestamp])
     for order in asks_orders:
-        writer.writerow(str(order.side) + ',' + str(order.price) + ',' + str(order.size) + ',' + str(order.timestamp))
-
+        writer.writerow([order.side, order.price, order.size, order.timestamp])
