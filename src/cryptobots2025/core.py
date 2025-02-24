@@ -34,7 +34,7 @@ asks_orders = [
             Order(
                 price=ask['price'],
                 size=ask['size'],
-                side='bid',
+                side='ask',
                 timestamp=time.time()
             )
             for ask in asks
@@ -44,8 +44,6 @@ bids_orders.sort(key=lambda x: x.price, reverse=True) # Highest buy prices first
 asks_orders.sort(key=lambda x: x.price) # Lowest sell prices first
 for order in bids_orders:
     print(order)
-    print("\n")
-    
+
 for order in asks_orders:
     print(order)
-    print("\n")
