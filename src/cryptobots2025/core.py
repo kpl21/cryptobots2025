@@ -47,5 +47,5 @@ for order in bids_orders:
     print("\033[31m" + str(order) + "\033[0m")
 
 for order in asks_orders:
-    print(order)
+    print("\033[32m" + str(order) + "\033[0m")
 
