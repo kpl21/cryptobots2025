@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import time
 from order import Order
 from coinbase.rest import RESTClient
+import csv
 
 # Load environment variables from .env file
 load_dotenv()
@@ -13,7 +14,7 @@ coinbase_api_secret=os.getenv('COINBASE_API_SECRET')
 
 client = RESTClient(api_key=coinbase_api_key, api_secret=coinbase_api_secret)
 
-product = client.get_product_book("SOL-USD", limit=5)
+product = client.get_product_book("SOL-USD")
 
 pricebook = product.pricebook
 
@@ -48,4 +49,14 @@ for order in bids_orders:
 
 for order in asks_orders:
     print("\033[32m" + str(order) + "\033[0m")
+
+
+csv_file = '../../data/.csv'
+
+with open(csv_file, 'w', newline='') as file:
+    writer = csv.writer(file)
+    for order in bids_orders:
+        writer.writerows(str(order.side) + "," + str(order.price) + "," + str(order.size) + "," + str(order.timestamp))
+    for order in asks_orders:
+        writer.writerows(str(order.side) + "," + str(order.price) + "," + str(order.size) + "," + str(order.timestamp))
 
