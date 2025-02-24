@@ -40,6 +40,6 @@ asks_orders = [
             for ask in asks
         ]
 
-print(bid_orders)
-print(ask_orders)
+print(bids_orders)
+print(asks_orders)
 
