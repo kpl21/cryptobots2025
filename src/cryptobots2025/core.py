@@ -42,5 +42,10 @@ asks_orders = [
 
 bids_orders.sort(key=lambda x: x.price, reverse=True) # Highest buy prices first
 asks_orders.sort(key=lambda x: x.price) # Lowest sell prices first
-print(bids_orders)
-print(asks_orders)
+for order in bids_orders:
+    print(order)
+    print("\n")
+    
+for order in asks_orders:
+    print(order)
+    print("\n")
