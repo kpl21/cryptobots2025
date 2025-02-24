@@ -4,10 +4,15 @@ import json
 import os
 from dotenv import load_dotenv
 from json import dumps
-import order
 import pandas as pd
 
 from coinbase.rest import RESTClient
+
+class Order:
+    price: float
+    size: float
+    side: str  # 'bid' or 'ask'
+    timestamp: float = None
 
 # Load environment variables from .env file
 load_dotenv()
