@@ -24,6 +24,27 @@ pricebook = product.pricebook
 
 bids = pricebook.bids # list of dictionaries
 asks = pricebook.asks # list of dictionaries
-print(bids)
-print(asks)
+# print(bids)
+# print(asks)
+bids_orders = [
+            Order(
+                price=bid['price'],
+                size=bid['size'],
+                side='bid',
+                timestamp=time.time()
+            )
+            for bid in bids
+        ]
+asks_orders = [
+            Order(
+                price=ask['price'],
+                size=ask['size'],
+                side='bid',
+                timestamp=time.time()ord
+            )
+            for ask in asks
+        ]
+
+print(bid_orders)
+print(ask_orders)
 
